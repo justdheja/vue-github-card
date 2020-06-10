@@ -1,6 +1,6 @@
 <template>
   <form class="form">
-    <input :v-model="username" type="email" class="form__field" placeholder="Github Username" />
+    <input class="form__field" placeholder="Github Username"/>
     <button @click="propsfunction" type="button" class="btn btn--primary btn--inside uppercase">Search</button>
   </form>
 </template>

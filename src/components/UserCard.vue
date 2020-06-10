@@ -12,12 +12,23 @@
           {{user.data.followers}} Followers - {{user.data.following}} Following
           <br>
           {{user.data.public_repos}} Repos
+          <br>
         </p>
+
+
         
-        <span class="front__text-hover">Find Me</span>
+        <span class="front__text-hover">View More</span>
       </div>
     </div>
     <div class="back">
+      <span v-if="user.data.bio" class="front__text-bio">
+        <strong>
+        Bio:
+        </strong>
+        {{user.data.bio}}
+        <hr>
+      </span>
+      <br>
       <div class="social-media-wrapper">
         <a :href="user.data.html_url" target="_blank" class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
         <a v-if="user.data.blog" :href="`https://${user.data.blog}`" target="_blank" class="social-icon"><i class="fas fa-link" aria-hidden="true"></i></a>
@@ -185,6 +196,7 @@ $card-width: 250px;
     font-size: 10px;
   }
 
+
   .front-icons {
     position: relative;
     top: 0;
@@ -222,10 +234,15 @@ $card-width: 250px;
   width: 100%;
   background-color: $black;
   border-radius: 5px;
-  display: flex;
+  display: block;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  padding: 20px;
+  hr{
+    border: 1px solid white;
+  }
 }
 
 .social-media-wrapper {
