@@ -38,29 +38,6 @@ $standard: 10px;
 $card-height: 450px;
 $card-width: 300px;
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-
-  background: url("https://images.unsplash.com/photo-1447433589675-4aaa569f3e05?ixlib=rb-0.3.5&s=4222852e25e0f57d9485f7889957e99a&auto=format&fit=crop&w=2000&q=80");
-  background-size: cover;
-  background: #ccc;
-  background-position: 0 50%;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0);
-  }
-}
-
 .outer-div,
 .inner-div {
   height: $card-height;
@@ -75,7 +52,7 @@ $card-width: 300px;
 }
 
 .inner-div {
-  margin: $standard * 5 auto;
+  margin: $standard * 0 auto;
 
   border-radius: 5px;
   font-weight: 400;
@@ -123,7 +100,7 @@ $card-width: 300px;
   position: relative;
   height: 150px;
   width: $card-width;
-  background: url("https://images.unsplash.com/photo-1511207538754-e8555f2bc187?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=88672068827eaeeab540f584b883cc66&auto=format&fit=crop&w=1164&q=80")
+  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
     no-repeat;
   background-size: cover;
   backface-visibility: hidden;
