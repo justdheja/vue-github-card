@@ -24,6 +24,7 @@
       <span v-if="user.data.bio" class="front__text-bio">
         <strong>
         Bio:
+        <br>
         </strong>
         {{user.data.bio}}
         <hr>
