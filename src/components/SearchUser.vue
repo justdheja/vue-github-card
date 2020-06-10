@@ -5,6 +5,12 @@
   </form>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
 <style lang="scss" scoped>
 $background: #f5f6fa;
 $text: #000000;

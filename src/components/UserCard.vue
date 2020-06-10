@@ -2,11 +2,12 @@
   <div v-if="user" class="outer-div">
   <div class="inner-div">
     <div class="front">
-      <div class="front__bkg-photo"></div>
-      <div class="front__face-photo"></div>
+      <img :src="bgCard" alt="" class="front__bkg-photo">
+      <img :src="user.data.avatar_url" alt="" class="front__face-photo">
       <div class="front__text">
         <h3 class="front__text-header">{{user.data.name}}</h3>
-        <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>{{user.data.location}}</p>
+        <h3 class="front__text-subheader">{{user.data.login}}</h3>
+        <p v-if="user.data.location" class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>{{user.data.location}}</p>
         <p class="front__text-info">
           {{user.data.followers}} Followers - {{user.data.following}} Following
           <br>
@@ -18,7 +19,8 @@
     </div>
     <div class="back">
       <div class="social-media-wrapper">
-        <a :href="`https://github.com/${user.data.login}`" target="_blank" class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
+        <a :href="user.data.html_url" target="_blank" class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
+        <a v-if="user.data.blog" :href="`https://${user.data.blog}`" target="_blank" class="social-icon"><i class="fas fa-link" aria-hidden="true"></i></a>
       </div>
     </div>
 
@@ -33,7 +35,19 @@ export default {
       type: Object,
       required: true
     }
-  }
+  },
+  computed: {
+    bgCard(){
+      var repos = this.user.data.public_repos
+      if(repos > 15){
+        return "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+      } else if (repos < 5) {
+        return "https://images.unsplash.com/photo-1516653980844-c68df1de5249?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+      } else {
+        return "https://images.unsplash.com/photo-1558710763-9791081edd44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+      }
+    }
+  },
 }
 </script>
 
@@ -106,11 +120,8 @@ $card-width: 250px;
 
 .front__bkg-photo {
   position: relative;
-  height: 150px;
+  height: 110px;
   width: $card-width;
-  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
-    no-repeat;
-  background-size: cover;
   backface-visibility: hidden;
   overflow: hidden;
   border-top-right-radius: 5px;
@@ -129,13 +140,11 @@ $card-width: 250px;
 .front__face-photo {
   position: relative;
   top: -60px;
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   margin: 0 auto;
   border-radius: 50%;
   border: 5px solid $white;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/156905/profile/profile-512.jpg?1530296477")
-    no-repeat;
   background-size: contain;
   backface-visibility: hidden;
   overflow: hidden;
@@ -153,27 +162,33 @@ $card-width: 250px;
 
   .front__text-header {
     font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .front__text-subheader {
+    font-weight: 400;
+    font-size: 14px;
   }
 
   .front__text-para {
     position: relative;
     top: -5px;
-
+    margin-top: 5px;
     color: #000;
-    font-size: 14px;
+    font-size: 10px;
     letter-spacing: 0.4px;
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
   }
 
   .front__text-info {
-    font-size: 2vh;
+    font-size: 10px;
   }
 
   .front-icons {
     position: relative;
     top: 0;
-    font-size: 14px;
+    font-size: 10px;
     margin-right: 6px;
     color: gray;
   }
@@ -251,7 +266,18 @@ $card-width: 250px;
 }
 
 .fab:hover {
-  top: -5px;
+  top: -7px;
+}
+
+.fas {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.fas:hover {
+  top: -7px;
 }
 
 </style>

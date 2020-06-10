@@ -28,7 +28,7 @@ export default {
     }
   },
   created() {
-      axios.get("https://api.github.com/users/justdheja")
+      axios.get("https://api.github.com/users/victoriatrinita")
         .then(Response => {
           console.log(Response)
           this.github = Response
