@@ -23,8 +23,8 @@
     <div class="back">
       <span v-if="user.data.bio" class="front__text-bio">
         <strong>
-        Bio:
-        <br>
+          Bio:
+          <br>
         </strong>
         {{user.data.bio}}
         <hr>
@@ -240,7 +240,7 @@ $card-width: 250px;
   justify-content: center;
   align-items: center;
   color: #fff;
-  padding: 20px;
+  padding: 25px;
   hr{
     border: 1px solid white;
   }
