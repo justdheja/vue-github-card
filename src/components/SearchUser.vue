@@ -11,6 +11,7 @@ $text: #9c9c9c;
 $input-bg-color: #fff;
 $input-text-color: #a3a3a3;
 $button-bg-color: #2c2d30;
+$button-bg-color-mobile: #094256;
 $button-text-color: #fff;
 
 //** root
@@ -19,13 +20,6 @@ $button-text-color: #fff;
 	color: $text;
 	font: 1rem "PT Sans", sans-serif;
 }
-
-html,
-body,
-.container {
-	height: 100%;
-}
-
 a {
 	color: inherit;
 	
@@ -94,5 +88,20 @@ a {
 		outline: 0;
 		padding: 22px 18px;
 	}
+}
+
+// mobile
+
+@media screen and (max-width: 1025px) {
+  .form{
+    &__field{
+      width: 250px;
+    }
+  }
+  .btn{
+    &--primary{
+      background: $button-bg-color-mobile;
+    }
+  }
 }
 </style>
