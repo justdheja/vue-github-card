@@ -7,7 +7,7 @@
 
 <style lang="scss" scoped>
 $background: #f5f6fa;
-$text: #9c9c9c;
+$text: #000000;
 $input-bg-color: #fff;
 $input-text-color: #a3a3a3;
 $button-bg-color: #2c2d30;
@@ -55,13 +55,14 @@ a {
 	
 	&--primary {
 		background: $button-bg-color;
-		color: $button-text-color;
+    color: $button-text-color;
+    font-size: 10px;
 		box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
 		border-radius: 5px;
-		padding: 12px 36px;
+		padding: 10px 30px;
 		
 		&:hover {
-			background: darken($button-bg-color, 4%);
+			background: darken($button-bg-color, 10%);
 		}
 		
 		&:active {
@@ -71,14 +72,15 @@ a {
 	}
 	
 	&--inside {
-		margin-left: -96px;
+		margin-left: -50px;
 	}
 }
 
 //** form
 .form {	
-	&__field {
-		width: 360px;
+  &__field {
+  height: 10px;
+		width: 350px;
 		background: #fff;
 		color: $input-text-color;
 		font: inherit;

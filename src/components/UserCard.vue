@@ -5,7 +5,7 @@
       <div class="front__bkg-photo"></div>
       <div class="front__face-photo"></div>
       <div class="front__text">
-        <h3 class="front__text-header">Bobby Korec</h3>
+        <h3 class="front__text-header">John Doe</h3>
         <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>Seattle</p>
         
         <span class="front__text-hover">Find Me</span>
@@ -35,8 +35,8 @@ $black: #071011;
 $white: #fff;
 $red: #ff434c;
 $standard: 10px;
-$card-height: 450px;
-$card-width: 300px;
+$card-height: 400px;
+$card-width: 250px;
 
 .outer-div,
 .inner-div {
@@ -63,7 +63,7 @@ $card-width: 300px;
   transform-style: preserve-3d;
 
   &:hover {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
     background-color: transparent;
   }
 
