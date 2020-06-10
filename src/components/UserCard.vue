@@ -11,7 +11,7 @@
         <p class="front__text-info">
           {{user.data.followers}} Followers - {{user.data.following}} Following
           <br>
-          {{user.data.public_repos}} repos
+          {{user.data.public_repos}} Repos
         </p>
         
         <span class="front__text-hover">Find Me</span>

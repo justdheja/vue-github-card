@@ -1,13 +1,16 @@
 <template>
   <form class="form">
-    <input type="email" class="form__field" placeholder="Github Username" />
-    <button type="button" class="btn btn--primary btn--inside uppercase">Search</button>
+    <input :v-model="username" type="email" class="form__field" placeholder="Github Username" />
+    <button @click="propsfunction" type="button" class="btn btn--primary btn--inside uppercase">Search</button>
   </form>
 </template>
 
 <script>
 export default {
-  
+  props: {
+    username: String,
+    propsfunction: Function,
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="hero is-fullheight">
 
-    <search-user/>
+    <search-user :username="userinput" :propsfunction="getUser"/>
 
     <user-card :user="github"/>
 
@@ -24,15 +24,21 @@ export default {
   },
   data() {
     return {
-      github: null
+      github: null,
+      userinput: null
     }
   },
   created() {
-      axios.get("https://api.github.com/users/victoriatrinita")
-        .then(Response => {
-          console.log(Response)
-          this.github = Response
-        })
+    axios.get("https://api.github.com/users/justdheja")
+      .then(Response => {
+        console.log(Response)
+        this.github = Response
+      })
+  },
+  methods: {
+    getUser(){
+      console.log(this.userinput)
+    }
   },
 
 }
