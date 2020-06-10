@@ -1,0 +1,21 @@
+body{
+  padding: 5vh;
+  height: 100%;
+  background-image: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+  url('./backgorund.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#app{
+  padding: 2vh;
+}
+
+footer{
+  text-align: center;
+  color: white;
+}

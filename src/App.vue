@@ -1,6 +1,13 @@
 <template>
-  <div id="app">
-    <user-card msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="hero is-fullheight">
+
+    
+
+    <user-card/>
+
+    <footer>
+      Made with 💌 by justdheja
+    </footer>
   </div>
 </template>
 
@@ -16,11 +23,5 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./assets/main.scss");
 </style>
