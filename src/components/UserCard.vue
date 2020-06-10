@@ -1,19 +1,24 @@
 <template>
-  <div class="outer-div">
+  <div v-if="user" class="outer-div">
   <div class="inner-div">
     <div class="front">
       <div class="front__bkg-photo"></div>
       <div class="front__face-photo"></div>
       <div class="front__text">
-        <h3 class="front__text-header">John Doe</h3>
-        <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>Seattle</p>
+        <h3 class="front__text-header">{{user.data.name}}</h3>
+        <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i>{{user.data.location}}</p>
+        <p class="front__text-info">
+          {{user.data.followers}} Followers - {{user.data.following}} Following
+          <br>
+          {{user.data.public_repos}} repos
+        </p>
         
         <span class="front__text-hover">Find Me</span>
       </div>
     </div>
     <div class="back">
       <div class="social-media-wrapper">
-        <a href="#" class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
+        <a :href="`https://github.com/${user.data.login}`" target="_blank" class="social-icon"><i class="fab fa-github-square" aria-hidden="true"></i></a>
       </div>
     </div>
 
@@ -24,7 +29,10 @@
 <script>
 export default {
   props: {
-    msg: String
+    user: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
@@ -156,6 +164,10 @@ $card-width: 250px;
     letter-spacing: 0.4px;
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
+  }
+
+  .front__text-info {
+    font-size: 2vh;
   }
 
   .front-icons {

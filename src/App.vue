@@ -3,7 +3,7 @@
 
     <search-user/>
 
-    <user-card/>
+    <user-card :user="github"/>
 
     <footer>
       Made with 💛 by justdheja
@@ -14,13 +14,27 @@
 <script>
 import UserCard from './components/UserCard.vue'
 import SearchUser from './components/SearchUser.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     UserCard,
     SearchUser
-  }
+  },
+  data() {
+    return {
+      github: null
+    }
+  },
+  created() {
+      axios.get("https://api.github.com/users/justdheja")
+        .then(Response => {
+          console.log(Response)
+          this.github = Response
+        })
+  },
+
 }
 </script>
 
