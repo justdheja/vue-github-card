@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $background: #f5f6fa;
 $text: #000000;
 $input-bg-color: #fff;

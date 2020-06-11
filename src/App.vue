@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="hero is-fullheight">
 
-    <search-user :username="userinput" :propsfunction="getUser"/>
+    <form class="form">
+      <input class="form__field" placeholder="Github Username"/>
+      <button type="button" class="btn btn--primary btn--inside uppercase">Search</button>
+    </form>
 
     <user-card :user="github"/>
 
