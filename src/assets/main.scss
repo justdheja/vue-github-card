@@ -2,8 +2,8 @@ body{
   height: 100%;
   background-image: 
   linear-gradient(
-      rgba(0, 0, 0, 0.4), 
-      rgba(0, 0, 0, 0.8)
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.9)
     ),
   url('./backgorund.jpg');
   background-size: cover;
@@ -28,32 +28,6 @@ $input-text-color: #a3a3a3;
 $button-bg-color: #2c2d30;
 $button-bg-color-mobile: #094256;
 $button-text-color: #fff;
-
-// root
-:root {
-	background: $background;
-	color: $text;
-	font: 1rem "PT Sans", sans-serif;
-}
-a {
-	color: inherit;
-	
-	&:hover {
-		color: $button-bg-color;
-	}
-}
-
-// helper
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.uppercase {
-	text-transform: uppercase;
-}
 
 // button
 .btn {

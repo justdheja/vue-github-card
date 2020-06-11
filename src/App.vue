@@ -78,7 +78,8 @@ $button-text-color: #fff;
 		padding: 10px 30px;
 		
 		&:hover {
-			background: darken($button-bg-color, 10%);
+      background: darken($button-bg-color, 10%);
+      margin-left: -40px;
 		}
 		
 		&:active {
