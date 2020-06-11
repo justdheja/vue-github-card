@@ -1,5 +1,6 @@
 <template>
-  <div v-if="user" class="outer-div">
+<div>
+  <div v-if="userExist" class="outer-div">
   <div class="inner-div">
     <div class="front">
       <img :src="bgCard" alt="" class="front__bkg-photo">
@@ -36,6 +37,10 @@
       </div>
     </div>
 
+    </div>
+  </div>
+  <div>
+    <h1 class="not-found">User Not Found</h1>
   </div>
 </div>
 </template>
@@ -45,10 +50,17 @@ export default {
   props: {
     user: {
       type: Object,
-      required: true
+      required: false
     }
   },
   computed: {
+    userExist(){
+      if(this.user.status === 200){
+        return true
+      } else {
+        return false
+      }
+    },
     bgCard(){
       var repos = this.user.data.public_repos
       if(repos > 15){
@@ -71,6 +83,12 @@ $red: #ff434c;
 $standard: 10px;
 $card-height: 400px;
 $card-width: 250px;
+
+.not-found{
+  color: $white;
+  font-weight: 700;
+}
+
 
 .outer-div,
 .inner-div {

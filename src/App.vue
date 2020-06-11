@@ -2,8 +2,8 @@
   <div id="app" class="hero is-fullheight">
 
     <form class="form">
-      <input class="form__field" placeholder="Github Username"/>
-      <button type="button" class="btn btn--primary btn--inside uppercase">Search</button>
+      <input v-on:keyup.enter="console.log(username)" v-model="username" class="form__field" placeholder="Github Username"/>
+      <button @click="getUser" type="button" class="btn btn--primary btn--inside uppercase">Search</button>
     </form>
 
     <user-card :user="github"/>
@@ -26,19 +26,21 @@ export default {
   data() {
     return {
       github: null,
-      userinput: null
+      username: null
     }
   },
   created() {
-    axios.get("https://api.github.com/users/justdheja")
+    
+  },
+  methods: {
+    getUser(){
+      console.log(this.username)
+      axios.get(`https://api.github.com/users/${this.username}`)
       .then(Response => {
         console.log(Response)
         this.github = Response
       })
-  },
-  methods: {
-    getUser(){
-      console.log(this.userinput)
+      this.username = ''
     }
   },
 
