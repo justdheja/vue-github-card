@@ -1,19 +1,16 @@
-# awesome-github-card
+# awesome-github-card :carousel:
 
-## Project setup
+#### Project setup
 ```
-yarn install
+yarn
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 yarn build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
