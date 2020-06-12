@@ -1,4 +1,4 @@
-# awesome-github-card :carousel-horse:
+# awesome-github-card 🎠
 
 #### Project setup
 ```
