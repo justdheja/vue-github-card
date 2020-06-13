@@ -12,7 +12,7 @@
         <p class="front__text-info">
           {{user.data.followers}} Followers - {{user.data.following}} Following
           <br>
-          {{user.data.public_repos}} Repos
+          {{user.data.public_repos}} {{user.data.public_repos > 1 ? 'Repos' : 'Repo'}}
           <br>
         </p>
 
