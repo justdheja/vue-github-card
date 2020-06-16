@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div v-if="userExist" class="outer-div">
+  <div class="outer-div">
   <div class="inner-div">
     <div class="front">
       <img :src="bgCard" alt="" class="front__bkg-photo">
@@ -39,9 +39,9 @@
 
     </div>
   </div>
-  <div>
+  <!-- <div>
     <h1 class="not-found">User Not Found</h1>
-  </div>
+  </div> -->
 </div>
 </template>
 
